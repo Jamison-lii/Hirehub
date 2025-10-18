@@ -20,4 +20,9 @@ export const API_PATHS = {
   IMAGE: {
     UPLOAD_IMAGE: "api/auth/upload-image",
   },
+  FAPSHI: {
+    API_USER : "39eb5c0a-7ea9-4af7-86c8-6094d4ea8c79",
+    API_KEY : "FAK_be9001145c9d2ea44c8c0c49f3b78983", 
+    BASE_URL : "https://live.fapshi.com"
+  }
 };
