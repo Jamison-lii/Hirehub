@@ -27,6 +27,7 @@ import RenderResume from "../../components/ResumeTemplates/RenderResume";
 import { captureElementAsImage, dataURLtoFile, fixTailwindColors } from "../../utils/helper";
 import ThemeSelector from "./ThemeSelector";
 import Modal from "../../components/Modal";
+import { handleDownloadPayment } from "../../utils/paymentWall";
 
 const EditResume = () => {
   const { resumeId } = useParams();
@@ -551,6 +552,8 @@ const EditResume = () => {
     }
   };
 
+
+
   // download resume
   const reactToPrintFn = useReactToPrint({ contentRef: resumeDownloadRef });
 
@@ -601,7 +604,8 @@ const EditResume = () => {
               <LuTrash2 className="text-[16px]" />
               <span className="hidden md:block">Delete</span>
             </button>
-
+           
+           {/*Here it is */} 
             <button
               className="btn-small-light"
               onClick={() => setOpenPreviewModal(true)}
@@ -701,7 +705,8 @@ const EditResume = () => {
           showActionBtn
           actionBtnText="Download"
           actionBtnIcon={<LuDownload className="text-[16px]" />}
-          onActionClick={() => reactToPrintFn()}
+          onActionClick={() => handleDownloadPayment(reactToPrintFn)}
+
         >
           <div ref={resumeDownloadRef} className="w-[98vw] h-[90vh]">
             <RenderResume
